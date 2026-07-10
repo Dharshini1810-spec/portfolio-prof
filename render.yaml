@@ -1,0 +1,17 @@
+services:
+  - type: static
+    name: dharshini-portfolio
+    env: static
+    branch: main
+    root: vite-project
+    staticPublishPath: dist
+    buildCommand: npm install && npm run build
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: VITE_EMAILJS_SERVICE_ID
+        value: ""
+      - key: VITE_EMAILJS_TEMPLATE_ID
+        value: ""
+      - key: VITE_EMAILJS_PUBLIC_KEY
+        value: ""
