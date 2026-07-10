@@ -6,11 +6,14 @@ import { motion } from 'framer-motion'
   1. Sign up at emailjs.com
   2. Add Email Service (Gmail)
   3. Create Template with variables: from_name, from_email, message, to_name
-  4. Replace below constants with your actual IDs:
+  4. Add these env vars to Render or your local .env file:
+     VITE_EMAILJS_SERVICE_ID
+     VITE_EMAILJS_TEMPLATE_ID
+     VITE_EMAILJS_PUBLIC_KEY
 */
-const SERVICE_ID = 'YOUR_SERVICE_ID'
-const TEMPLATE_ID = 'YOUR_TEMPLATE_ID'
-const PUBLIC_KEY = 'YOUR_PUBLIC_KEY'
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID'
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID'
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
@@ -195,7 +198,7 @@ export default function Contact() {
               onClick={copyEmail}
               className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-all"
             >
-              <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>
               {copied ? 'Copied! ✓' : 'dharshinis1806@gmail.com'}
             </button>
             {socials.map((s) => (
