@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import Lenis from 'lenis'
-import StarBackground from './components/StarBackground'
+// import StarBackground from './components/StarBackground' // Replaced with shadcn-style neutral background (kept for revert)
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -28,8 +28,8 @@ function App() {
   }, [])
 
   return (
-    <div className="relative min-h-screen bg-[#020209]">
-      <StarBackground />
+    <div className="relative min-h-screen bg-background text-foreground">
+      {/* <StarBackground /> */}
       <div className="relative" style={{ zIndex: 10 }}>
         <Navbar />
         <main>
