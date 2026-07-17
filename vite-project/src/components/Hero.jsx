@@ -62,7 +62,7 @@ export default function Hero() {
             <div className="absolute inset-0 rounded-full border-2 border-border" />
             <div className="absolute inset-3 rounded-full overflow-hidden bg-muted">
               <img
-                src="/avatar.png"
+                src="/avatar.jpg"
                 alt="Dharshini S"
                 className="w-full h-full object-cover"
                 onError={(e) => {
