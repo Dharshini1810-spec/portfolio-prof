@@ -67,16 +67,12 @@ export default function About() {
             className="text-center md:text-left"
           >
             <p className="text-2xl md:text-2xl text-muted-foreground leading-relaxed font-medium">
-              I'm a results-driven{' '}
-              <span className="text-foreground font-medium">CSE Engineer</span> at{' '}
-              <span className="text-foreground font-medium">SNS College of Engineering</span>
-              , passionate about building impactful products. From architecting{' '}
-              <span className="text-foreground font-medium">FastAPI</span> backends to
-              crafting polished{' '}
-              <span className="text-foreground font-medium">React</span> interfaces —
-              I bridge the gap between design and engineering. With{' '}
-              <span className="text-foreground font-medium">4+ internships</span> and a
-              product patent, I bring both academic rigor and real-world experience.
+              I'm a{' '}
+              <span className="text-foreground font-medium">Full Stack Developer</span> with a strong focus on{' '}
+              <span className="text-foreground font-medium">Software Testing</span>. I build end-to-end web applications — from{' '}
+              <span className="text-foreground font-medium">React</span> frontends to{' '}
+              <span className="text-foreground font-medium">FastAPI</span> backends — and back them with automated testing, meaningful test coverage, and structured QA processes that catch issues before they reach production. With{' '}
+              <span className="text-foreground font-medium">4+ internships</span> and a product patent, I bring both engineering depth and a quality-first mindset to every project.
             </p>
           </motion.div>
 

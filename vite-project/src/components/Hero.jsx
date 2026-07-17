@@ -4,10 +4,10 @@ import { motion } from 'framer-motion'
 // Replace src/assets/profile.jpg with your professional photo
 
 const roles = [
-  'Software Web Developer',
-  'Full Stack Engineer',
-  'AI Enthusiast',
-  'Hackathon Participant',
+  'Full Stack Developer',
+  'Software Testing Engineer',
+  'QA Automation Specialist',
+  'Backend & Frontend Engineer',
 ]
 
 export default function Hero() {
@@ -110,8 +110,8 @@ export default function Hero() {
             <span className="animate-pulse">|</span>
           </div>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mt-6 mb-10">
-            Crafting impactful software experiences from Coimbatore
+          <p className="text-xl md:text-2xl text-muted-foreground mt-6 mb-10 max-w-2xl mx-auto">
+            Full Stack Developer with a strong focus on Software Testing — building reliable frontend and backend systems backed by automated testing, thorough test coverage, and disciplined QA processes.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 justify-center">
