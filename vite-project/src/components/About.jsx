@@ -66,16 +66,16 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-center md:text-left"
           >
-            <p className="text-2xl md:text-2xl text-slate-300 leading-relaxed font-medium">
+            <p className="text-2xl md:text-2xl text-muted-foreground leading-relaxed font-medium">
               I'm a results-driven{' '}
-              <span className="text-cyan-400 font-medium">CSE Engineer</span> at{' '}
-              <span className="text-cyan-400 font-medium">SNS College of Engineering</span>
+              <span className="text-foreground font-medium">CSE Engineer</span> at{' '}
+              <span className="text-foreground font-medium">SNS College of Engineering</span>
               , passionate about building impactful products. From architecting{' '}
-              <span className="text-cyan-400 font-medium">FastAPI</span> backends to
+              <span className="text-foreground font-medium">FastAPI</span> backends to
               crafting polished{' '}
-              <span className="text-cyan-400 font-medium">React</span> interfaces —
+              <span className="text-foreground font-medium">React</span> interfaces —
               I bridge the gap between design and engineering. With{' '}
-              <span className="text-cyan-400 font-medium">4+ internships</span> and a
+              <span className="text-foreground font-medium">4+ internships</span> and a
               product patent, I bring both academic rigor and real-world experience.
             </p>
           </motion.div>
@@ -88,27 +88,14 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 * i }}
-                className="glass-card rounded-2xl p-8 text-center hover:border-cyan-500/40 hover:bg-cyan-500/5 transition-all duration-300"
-                style={{
-                  border: '1px solid rgba(255,255,255,0.08)',
-                  boxShadow: 'none',
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 0 30px rgba(0,245,255,0.1)'}
-                onMouseLeave={(e) => e.currentTarget.style.boxShadow = 'none'}
+                className="glass-card rounded-2xl p-8 text-center hover:border-foreground/30 transition-all duration-300"
               >
                 <div
-                  className="text-6xl md:text-7xl font-bold mb-3"
-                  style={{
-                    background: 'linear-gradient(135deg, #00f5ff, #8b5cf6)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    textShadow: 'none',
-                    filter: 'drop-shadow(0 0 20px rgba(0,245,255,0.3))',
-                  }}
+                  className="text-6xl md:text-7xl font-bold mb-3 text-foreground"
                 >
                   <CountUp value={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
                 </div>
-                <div className="text-slate-300 text-base uppercase tracking-widest font-semibold">
+                <div className="text-muted-foreground text-base uppercase tracking-widest font-semibold">
                   {stat.label}
                 </div>
               </motion.div>

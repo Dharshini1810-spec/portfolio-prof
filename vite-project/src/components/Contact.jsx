@@ -81,7 +81,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center text-slate-400 mb-16 text-lg"
+          className="text-center text-muted-foreground mb-16 text-lg"
         >
           Have a project in mind? Let's build something amazing together.
         </motion.p>
@@ -91,28 +91,18 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-xl mx-auto rounded-3xl p-10"
-          style={{
-            background: 'rgba(5,5,25,0.9)',
-            border: '1px solid rgba(139,92,246,0.2)',
-            boxShadow: '0 0 80px rgba(139,92,246,0.1)',
-          }}
+          className="max-w-xl mx-auto rounded-3xl p-10 bg-card border border-border"
         >
           <div className="text-center mb-8">
-            <div className="text-4xl mb-4">🚀</div>
-            <h3 className="text-2xl font-bold" style={{
-              background: 'linear-gradient(135deg, #00f5ff, #8b5cf6)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}>
+            <h3 className="text-2xl font-bold text-foreground">
               Send Me a Message
             </h3>
-            <p className="text-slate-500 text-sm mt-2">I'll respond within 24 hours</p>
+            <p className="text-muted-foreground text-sm mt-2">I'll respond within 24 hours</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="flex flex-col gap-2">
-              <label className="text-sm font-medium text-slate-300 tracking-wide">Full Name</label>
+              <label className="text-sm font-medium text-foreground tracking-wide">Full Name</label>
               <input
                 type="text"
                 name="name"
@@ -120,12 +110,12 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder="Enter your name"
                 required
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-slate-600 focus:border-cyan-500 focus:shadow-[0_0_20px_rgba(0,245,255,0.15)] outline-none transition-all duration-300"
+                className="w-full bg-muted border border-border rounded-xl px-5 py-4 text-foreground placeholder:text-muted-foreground/60 focus:border-foreground outline-none transition-all duration-300"
               />
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-sm font-medium text-slate-300 tracking-wide">Email Address</label>
+              <label className="text-sm font-medium text-foreground tracking-wide">Email Address</label>
               <input
                 type="email"
                 name="email"
@@ -133,12 +123,12 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder="your@email.com"
                 required
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-slate-600 focus:border-cyan-500 focus:shadow-[0_0_20px_rgba(0,245,255,0.15)] outline-none transition-all duration-300"
+                className="w-full bg-muted border border-border rounded-xl px-5 py-4 text-foreground placeholder:text-muted-foreground/60 focus:border-foreground outline-none transition-all duration-300"
               />
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-sm font-medium text-slate-300 tracking-wide">Your Message</label>
+              <label className="text-sm font-medium text-foreground tracking-wide">Your Message</label>
               <textarea
                 name="message"
                 value={form.message}
@@ -146,30 +136,22 @@ export default function Contact() {
                 placeholder="Tell me about your project or just say hello..."
                 required
                 rows={6}
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-slate-600 focus:border-cyan-500 focus:shadow-[0_0_20px_rgba(0,245,255,0.15)] outline-none transition-all duration-300 resize-none"
+                className="w-full bg-muted border border-border rounded-xl px-5 py-4 text-foreground placeholder:text-muted-foreground/60 focus:border-foreground outline-none transition-all duration-300 resize-none"
               />
             </div>
 
             <button
               type="submit"
               disabled={status === 'loading'}
-              className="w-full py-4 rounded-xl text-white font-semibold text-lg transition-all duration-300 disabled:opacity-70"
-              style={{
-                background: 'linear-gradient(135deg, #00f5ff, #8b5cf6)',
-                boxShadow: '0 0 20px rgba(0,245,255,0.2)',
-              }}
+              className="w-full py-4 rounded-xl bg-foreground text-background font-semibold text-lg transition-all duration-300 disabled:opacity-70 hover:opacity-90"
               onMouseEnter={(e) => {
-                if (status !== 'loading') {
-                  e.currentTarget.style.transform = 'scale(1.02)'
-                  e.currentTarget.style.boxShadow = '0 0 40px rgba(0,245,255,0.3)'
-                }
+                if (status !== 'loading') e.currentTarget.style.opacity = '0.9'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'scale(1)'
-                e.currentTarget.style.boxShadow = '0 0 20px rgba(0,245,255,0.2)'
+                e.currentTarget.style.opacity = ''
               }}
             >
-              {status === 'idle' && 'Launch Message 🚀'}
+              {status === 'idle' && 'Send Message'}
               {status === 'loading' && (
                 <span className="flex items-center justify-center gap-2">
                   <svg className="animate-spin w-5 h-5" viewBox="0 0 24 24">
@@ -179,7 +161,7 @@ export default function Contact() {
                   Launching...
                 </span>
               )}
-              {status === 'success' && 'Message sent! Talk soon ✨'}
+              {status === 'success' && 'Message sent! Talk soon.'}
               {status === 'error' && 'Failed to send. Email me directly.'}
             </button>
           </form>
@@ -192,11 +174,11 @@ export default function Contact() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-12 text-center"
         >
-          <p className="text-slate-500 text-sm mb-4">Or connect with me directly:</p>
+          <p className="text-muted-foreground text-sm mb-4">Or connect with me directly:</p>
           <div className="flex items-center justify-center gap-6">
             <button
               onClick={copyEmail}
-              className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-all"
+              className="flex items-center gap-2 text-foreground hover:opacity-70 transition-all"
             >
               <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>
               {copied ? 'Copied! ✓' : 'dharshinis1806@gmail.com'}
@@ -207,7 +189,7 @@ export default function Contact() {
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-cyan-400 transition-all duration-300"
+                className="text-muted-foreground hover:text-foreground transition-all duration-300"
                 title={s.label}
               >
                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current"><path d={s.icon} /></svg>

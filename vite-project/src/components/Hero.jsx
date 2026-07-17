@@ -59,25 +59,8 @@ export default function Hero() {
           className="relative flex items-center justify-center"
         >
           <div className="relative w-80 h-80 md:w-96 md:h-96">
-            <div
-              className="absolute inset-0 rounded-full animate-spin-slow"
-              style={{
-                background: 'conic-gradient(from 0deg, #00f5ff, #8b5cf6, #f472b6, #00f5ff)',
-                padding: '3px',
-                WebkitMask: 'radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px))',
-                mask: 'radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px))',
-              }}
-            />
-            <div
-              className="absolute inset-1 rounded-full animate-spin-reverse"
-              style={{
-                background: 'conic-gradient(from 180deg, #8b5cf6, #f472b6, #00f5ff, #8b5cf6)',
-                padding: '3px',
-                WebkitMask: 'radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px))',
-                mask: 'radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px))',
-              }}
-            />
-            <div className="absolute inset-3 rounded-full overflow-hidden bg-[#020209]">
+            <div className="absolute inset-0 rounded-full border-2 border-border" />
+            <div className="absolute inset-3 rounded-full overflow-hidden bg-muted">
               <img
                 src="/avatar.png"
                 alt="Dharshini S"
@@ -90,23 +73,16 @@ export default function Hero() {
                 }}
               />
               <div
-                className="fallback-avatar hidden absolute inset-0 items-center justify-center"
-                style={{ background: 'linear-gradient(135deg, rgba(0,245,255,0.15), rgba(139,92,246,0.15))' }}
+                className="fallback-avatar hidden absolute inset-0 items-center justify-center bg-muted"
               >
-                <span className="text-6xl font-display font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <span className="text-6xl font-display font-bold text-foreground">
                   D
                 </span>
               </div>
             </div>
-            <div
-              className="absolute inset-0 rounded-full"
-              style={{
-                boxShadow: '0 0 60px rgba(0,245,255,0.3), 0 0 120px rgba(139,92,246,0.2)',
-              }}
-            />
 
-            <div className="absolute -top-6 -right-6 w-5 h-5 rounded-full bg-primary/30 animate-pulse-glow" />
-            <div className="absolute -bottom-4 -left-4 w-4 h-4 rounded-full bg-secondary/30 animate-pulse-glow" style={{ animationDelay: '1s' }} />
+            <div className="absolute -top-6 -right-6 w-3 h-3 rounded-full bg-muted-foreground/40" />
+            <div className="absolute -bottom-4 -left-4 w-2.5 h-2.5 rounded-full bg-muted-foreground/30" />
           </div>
 
           <div className="absolute w-full h-full top-0 left-0 pointer-events-none">
@@ -121,40 +97,34 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center"
         >
-          <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-base px-4 py-2 rounded-full mb-8">
-            👋 Available for opportunities
+          <div className="inline-flex items-center gap-2 bg-muted border border-border text-muted-foreground text-base px-4 py-2 rounded-full mb-8">
+            Available for opportunities
           </div>
 
-          <h1 className="text-5xl md:text-8xl font-display font-extrabold text-gradient-hero mb-6 tracking-wider">
+          <h1 className="text-5xl md:text-8xl font-display font-extrabold text-foreground mb-6 tracking-tight">
             DHARSHINI S
           </h1>
 
-          <div className="text-2xl md:text-3xl text-cyan-400 mb-4 h-12" style={{ textShadow: '0 0 10px rgba(0,245,255,0.5)' }}>
+          <div className="text-2xl md:text-3xl text-muted-foreground mb-4 h-12 font-medium">
             <span>{displayText}</span>
             <span className="animate-pulse">|</span>
           </div>
 
-          <p className="text-xl md:text-2xl text-slate-400 mt-6 mb-10">
+          <p className="text-xl md:text-2xl text-muted-foreground mt-6 mb-10">
             Crafting impactful software experiences from Coimbatore
           </p>
 
           <div className="flex flex-wrap items-center gap-4 justify-center">
             <button
               onClick={() => scrollTo('#projects')}
-              className="px-8 py-4 rounded-full text-white font-semibold text-lg transition-all duration-300 hover:scale-105"
-              style={{
-                background: 'linear-gradient(135deg, #00f5ff, #8b5cf6)',
-                boxShadow: '0 0 20px rgba(0,245,255,0.3)',
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 0 40px rgba(0,245,255,0.5)'}
-              onMouseLeave={(e) => e.currentTarget.style.boxShadow = '0 0 20px rgba(0,245,255,0.3)'}
+              className="px-8 py-4 rounded-full bg-foreground text-background font-semibold text-lg transition-all duration-300 hover:opacity-90"
             >
               View My Work
             </button>
             <a
               href="/resume.pdf"
               download
-              className="px-8 py-4 rounded-full border-2 border-cyan-500/50 text-cyan-400 font-semibold text-lg transition-all duration-300 hover:bg-cyan-500/10 hover:scale-105"
+              className="px-8 py-4 rounded-full border-2 border-border text-foreground font-semibold text-lg transition-all duration-300 hover:bg-muted"
             >
               Download Resume
             </a>
@@ -170,13 +140,10 @@ export default function Hero() {
                 className="group relative"
                 title={s.label}
               >
-                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:border-cyan-400/50 hover:bg-cyan-500/10 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-muted border border-border flex items-center justify-center hover:border-foreground/50 transition-all duration-300">
                   <svg
                     viewBox="0 0 24 24"
-                    className="w-6 h-6 fill-slate-400 group-hover:fill-cyan-400 transition-all duration-300"
-                    style={{ filter: 'drop-shadow(0 0 0px rgba(0,245,255,0))' }}
-                    onMouseEnter={(e) => e.currentTarget.style.filter = 'drop-shadow(0 0 8px rgba(0,245,255,0.8))'}
-                    onMouseLeave={(e) => e.currentTarget.style.filter = 'drop-shadow(0 0 0px rgba(0,245,255,0))'}
+                    className="w-6 h-6 fill-muted-foreground group-hover:fill-foreground transition-all duration-300"
                   >
                     <path d={s.icon} />
                   </svg>

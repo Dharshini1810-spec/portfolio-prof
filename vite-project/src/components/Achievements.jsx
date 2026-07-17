@@ -48,23 +48,11 @@ export default function Achievements() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.08 * i }}
-              className="rounded-2xl p-6 text-center transition-all duration-300"
-              style={{
-                background: 'rgba(255,255,255,0.03)',
-                border: '1px solid rgba(255,255,255,0.08)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(234,179,8,0.3)'
-                e.currentTarget.style.boxShadow = '0 0 30px rgba(234,179,8,0.1)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
-                e.currentTarget.style.boxShadow = 'none'
-              }}
+              className="rounded-2xl p-6 text-center transition-all duration-300 bg-card border border-border hover:border-foreground/30"
             >
               <div className="text-4xl mb-4">{a.icon}</div>
-              <h3 className="text-white font-semibold mb-1">{a.title}</h3>
-              <p className="text-slate-400 text-sm">{a.desc}</p>
+              <h3 className="text-foreground font-semibold mb-1">{a.title}</h3>
+              <p className="text-muted-foreground text-sm">{a.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -89,28 +77,16 @@ export default function Achievements() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.08 * i }}
               onClick={() => open(cert)}
-              className="rounded-2xl p-6 text-left transition-all duration-300 cursor-pointer hover:scale-[1.02]"
-              style={{
-                background: 'rgba(255,255,255,0.03)',
-                border: '1px solid rgba(255,255,255,0.08)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(139,92,246,0.3)'
-                e.currentTarget.style.boxShadow = '0 0 30px rgba(139,92,246,0.15)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
-                e.currentTarget.style.boxShadow = 'none'
-              }}
+              className="rounded-2xl p-6 text-left transition-all duration-300 cursor-pointer hover:scale-[1.02] bg-card border border-border hover:border-foreground/30"
             >
               <div className="flex items-start gap-4">
-                <div className="w-16 h-16 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center flex-shrink-0">
-                  <svg viewBox="0 0 24 24" className="w-7 h-7 fill-violet-400"><path d="M12 2L2 7v3c0 6.63 3.5 12.32 10 14 6.5-1.68 10-7.37 10-14V7l-10-5zm0 2.18l8 4v2.82c0 5.05-2.83 9.37-8 10.92-5.17-1.55-8-5.87-8-10.92V8.18l8-4z"/><path d="M11 14l-3-3-1.41 1.41L11 16.83l7-7-1.41-1.41L11 14z"/></svg>
+                <div className="w-16 h-16 rounded-xl bg-muted border border-border flex items-center justify-center flex-shrink-0">
+                  <svg viewBox="0 0 24 24" className="w-7 h-7 fill-foreground"><path d="M12 2L2 7v3c0 6.63 3.5 12.32 10 14 6.5-1.68 10-7.37 10-14V7l-10-5zm0 2.18l8 4v2.82c0 5.05-2.83 9.37-8 10.92-5.17-1.55-8-5.87-8-10.92V8.18l8-4z"/><path d="M11 14l-3-3-1.41 1.41L11 16.83l7-7-1.41-1.41L11 14z"/></svg>
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold">{cert.title}</h4>
-                  <p className="text-cyan-400 text-sm mt-1">{cert.issuer}</p>
-                  <p className="text-slate-500 text-xs mt-2">Click to view</p>
+                  <h4 className="text-foreground font-semibold">{cert.title}</h4>
+                  <p className="text-muted-foreground text-sm mt-1">{cert.issuer}</p>
+                  <p className="text-muted-foreground/70 text-xs mt-2">Click to view</p>
                 </div>
               </div>
             </motion.button>
@@ -124,8 +100,7 @@ export default function Achievements() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
-            style={{ background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(8px)' }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-foreground/80 backdrop-blur-md"
             onClick={() => setModalOpen(false)}
           >
             <motion.div
@@ -133,35 +108,25 @@ export default function Achievements() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.85, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="relative w-full max-w-lg rounded-3xl p-8"
-              style={{
-                background: 'rgba(5,5,25,0.95)',
-                border: '1px solid rgba(139,92,246,0.4)',
-              }}
+              className="relative w-full max-w-lg rounded-3xl p-8 bg-card border border-border"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setModalOpen(false)}
-                className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-slate-400 hover:text-white text-xl rounded-full bg-white/5 hover:bg-white/10 transition-all"
+                className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-muted-foreground hover:text-foreground text-xl rounded-full bg-muted hover:bg-border transition-all"
               >
                 ✕
               </button>
 
-              <div className="w-full rounded-xl overflow-hidden mb-6 flex items-center justify-center"
-                style={{
-                  border: '2px dashed rgba(139,92,246,0.3)',
-                  minHeight: '12rem',
-                  background: 'rgba(139,92,246,0.03)',
-                }}
-              >
-                <p className="text-slate-500 text-sm text-center p-4">
+              <div className="w-full rounded-xl overflow-hidden mb-6 flex items-center justify-center bg-muted border-2 border-dashed border-border min-h-[12rem]">
+                <p className="text-muted-foreground text-sm text-center p-4">
                   Drop your certificate at<br />
-                  <span className="text-cyan-400/60">src/assets/certificates/{selectedCert.file}</span>
+                  <span className="text-foreground/60">src/assets/certificates/{selectedCert.file}</span>
                 </p>
               </div>
 
-              <h3 className="text-xl font-bold text-white">{selectedCert.title}</h3>
-              <p className="text-cyan-400 mt-1">{selectedCert.issuer}</p>
+              <h3 className="text-xl font-bold text-foreground">{selectedCert.title}</h3>
+              <p className="text-muted-foreground mt-1">{selectedCert.issuer}</p>
             </motion.div>
           </motion.div>
         )}

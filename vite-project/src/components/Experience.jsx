@@ -67,33 +67,21 @@ export default function Experience() {
                 className="w-full"
               >
                 <div
-                  className="rounded-2xl p-8 transition-all duration-300"
-                  style={{
-                    background: 'rgba(5,5,25,0.9)',
-                    border: '1px solid rgba(255,255,255,0.08)',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(0,245,255,0.3)'
-                    e.currentTarget.style.boxShadow = '0 0 40px rgba(0,245,255,0.08)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
-                    e.currentTarget.style.boxShadow = 'none'
-                  }}
+                  className="rounded-2xl p-8 transition-all duration-300 bg-card border border-border hover:border-foreground/30"
                 >
                   <div className="flex flex-wrap items-center gap-4 mb-3">
-                    <span className="inline-block text-base font-medium px-4 py-2 rounded-full bg-cyan-500/15 text-cyan-400 border border-cyan-500/30">
+                    <span className="inline-block text-base font-medium px-4 py-2 rounded-full bg-muted text-foreground border border-border">
                       {exp.role}
                     </span>
-                    <span className="text-base text-slate-400">{exp.date}</span>
+                    <span className="text-base text-muted-foreground">{exp.date}</span>
                   </div>
-                  <h3 className="text-3xl font-display font-bold text-white mb-4" style={{ textShadow: '0 2px 20px rgba(0,245,255,0.2)' }}>
+                  <h3 className="text-3xl font-display font-bold text-foreground mb-4">
                     {exp.company}
                   </h3>
                   <ul className="space-y-4">
                     {exp.bullets.map((b, bi) => (
-                      <li key={bi} className="text-slate-300 text-lg flex items-start gap-4">
-                        <span className="w-2 h-2 rounded-full bg-cyan-400 flex-shrink-0 mt-2.5" />
+                      <li key={bi} className="text-muted-foreground text-lg flex items-start gap-4">
+                        <span className="w-2 h-2 rounded-full bg-foreground flex-shrink-0 mt-2.5" />
                         <span>{b}</span>
                       </li>
                     ))}

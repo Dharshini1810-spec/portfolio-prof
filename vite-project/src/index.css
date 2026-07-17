@@ -2,7 +2,7 @@
 
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
+  --font-display: 'IBM Plex Sans', 'Inter', sans-serif;
   --color-primary: #00f5ff;
   --color-secondary: #8b5cf6;
   --color-accent: #10b981;
@@ -84,7 +84,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .section-title {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'IBM Plex Sans', 'Inter', sans-serif;
   font-weight: 700;
   font-size: clamp(2.5rem, 6vw, 4rem);
   color: var(--foreground);

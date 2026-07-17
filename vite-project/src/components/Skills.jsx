@@ -56,37 +56,17 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.08 * i }}
-              className="rounded-2xl p-8 text-center transition-all duration-300"
-              style={{
-                background: 'rgba(255,255,255,0.03)',
-                border: '1px solid rgba(255,255,255,0.08)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(139,92,246,0.3)'
-                e.currentTarget.style.background = 'rgba(139,92,246,0.05)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
-                e.currentTarget.style.background = 'rgba(255,255,255,0.03)'
-              }}
+              className="rounded-2xl p-8 text-center transition-all duration-300 bg-card border border-border hover:border-foreground/30"
             >
               <div className="text-4xl mb-6">{cat.icon}</div>
-              <h3 className="text-2xl font-semibold text-violet-300 mb-8 uppercase tracking-widest font-display">
+              <h3 className="text-2xl font-semibold text-foreground mb-8 uppercase tracking-widest font-display">
                 {cat.category}
               </h3>
               <div className="flex flex-wrap justify-center gap-4">
                 {cat.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="text-lg px-5 py-3 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 transition-all duration-300 font-medium"
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'rgba(0,245,255,0.2)'
-                      e.currentTarget.style.boxShadow = '0 0 15px rgba(0,245,255,0.2)'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'rgba(0,245,255,0.1)'
-                      e.currentTarget.style.boxShadow = 'none'
-                    }}
+                    className="text-lg px-5 py-3 rounded-full bg-muted border border-border text-foreground transition-all duration-300 font-medium hover:border-foreground/40"
                   >
                     {skill}
                   </span>
